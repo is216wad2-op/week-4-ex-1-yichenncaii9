@@ -21,27 +21,38 @@
     <script>
 
         function validateForm() {
-            let error = "";
-                var x = document.forms["form"];
-                if(x.elements['id'].value.length > 10){
-                    error += "ID must not contain more than 10 characters\n";
-                }
-                if(x.elements['age'].value < 10 || x.elements['age'].value > 40){
-                    error += "Age must be between 10 and 40\n";
-                }
-                if(x.elements['email'].value.indexOf('@') === -1){
-                    error += "Email must contain '@'\n";
-                }
-                if(!x.elements['password'].value.trim()){
-                    error += "Password must not be empty\n";
-                }
+            var id = document.getElementsByName("id")[0].value;
+            var age = document.getElementsByName("age")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+            var errorMsg = "";
 
-                if(error){
-                    alert(error);
-                }
-                
+            if (id.length > 10) {
+                errorMsg += "ID must not contain more than 10 characters\n";
+            }
 
-            
+            if (email.indexOf("@") === -1) {
+                errorMsg += "Email must contain '@'\n";
+            }
+
+            if (age < 10 || age > 40) {
+                errorMsg += "Age must be between 10 and 40\n";
+            }
+
+            if (password.trim() === "") {
+                errorMsg += "Password must not be empty\n";
+            }
+
+            if (errorMsg) {
+                alert(errorMsg);
+                return false; 
+            } else {
+                return true;
+            }
+
+
+
+
         }
 
     </script>

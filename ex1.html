@@ -24,7 +24,7 @@
             let error = "";
                 var x = document.forms["form"];
                 if(x.elements['id'].value.length > 10){
-                    error += "ID cannot be more than 10 characters long\n";
+                    error += "ID must not contain more than 10 characters\n";
                 }
                 if(x.elements['age'].value < 10 || x.elements['age'].value > 40){
                     error += "Age must be between 10 and 40\n";

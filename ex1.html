@@ -21,31 +21,28 @@
     <script>
 
         function validateForm() {
-            var id = document.getElementsByName("id");
-            var age = document.getElementsByName("age");
-            var email = document.getElementsByName("email");
-            var password = document.getElementsByName("password");
-
-
-
+            var id = document.getElementsByName("id")[0].value;
+            var age = document.getElementsByName("age")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
             var errorMsg = "";
-
-            // 1. ID max length
+            console.log(id);
+      
             if (id.length > 10) {
                 errorMsg += "ID must be at most 10 characters long.\n";
             }
 
-            // 2. Email contains @
+
             if (!email.includes("@")) {
                 errorMsg += " Email must contain '@'.\n";
             }
 
-            // 3. Age between 10 and 40
+
             if (age < 10 || age > 40) {
                 errorMsg += "Age must be between 10 and 40.\n";
             }
 
-            // 4. Password not empty
+
             if (password.trim() === "") {
                 errorMsg += "Password cannot be empty.\n";
             }
@@ -59,6 +56,8 @@
                 
                 
             }
+
+            
 
         }
 
